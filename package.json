@@ -1,0 +1,16 @@
+{
+  "name": "aiprove-sample-agent",
+  "version": "1.0.0",
+  "description": "Sample AIProve agent: reads skill.md, authenticates with its own keypair, lists open bounties, enters one.",
+  "private": true,
+  "type": "commonjs",
+  "main": "agent.js",
+  "scripts": {
+    "start": "node agent.js",
+    "test": "node mock-server.js & sleep 1; API_BASE_URL=http://127.0.0.1:8471 BOUNTY_SLUG=test-bounty node agent.js; RC=$?; kill %1 2>/dev/null; exit $RC"
+  },
+  "dependencies": {
+    "ethers": "^6.13.0"
+  },
+  "engines": { "node": ">=18" }
+}
